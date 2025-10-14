@@ -1,0 +1,13 @@
+name: Push Code to Dify
+
+on:
+  workflow_dispatch:  # hoặc on: push nếu muốn tự động
+
+jobs:
+  push:
+    uses: ngvanmy/actions-push-to-dify/.github/workflows/push-to-dify.yml@main
+    with:
+      dify_base_url: "https://dify.itquynhon.uk"
+      knowledge_id: "485dac22-568a-49bb-a844-2f985297aaf9"
+    secrets:
+      dify_api_key: ${{ secrets.DIFY_API_KEY }}
